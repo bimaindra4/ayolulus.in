@@ -12,7 +12,7 @@
     </a>
 </li>
 <li>
-    <a href="#">
+    <a href="<?php echo site_url('pembayaran') ?>">
     <i class="icon icon-dollar blue-text s-18 pl-3"></i> 
         <span>Pembayaran</span>
     </a>

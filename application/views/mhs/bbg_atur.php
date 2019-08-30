@@ -248,8 +248,8 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-primary" onclick="showTentor()">Simpan</button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="showTentor()">Simpan</button>
                 </div>
             </form>
         </div>
@@ -296,7 +296,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
                 </div>
             </form>
         </div>
@@ -342,8 +342,8 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-primary" onclick="pengajuanBimbingan()">Simpan</button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="pengajuanBimbingan()">Simpan</button>
                 </div>
             </form>
         </div>

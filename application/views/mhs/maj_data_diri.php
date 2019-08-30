@@ -18,7 +18,12 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <div class="card-title">Data Diri</div>
+                        <div class="card-title">
+                            Data Diri
+                            <div class="float-right">
+                                <a href="<?php echo site_url('manajemen/edit_data_diri') ?>" class="btn btn-xs btn-primary">Edit Data</a>
+                            </div>
+                        </div>
                         <figure class="avatar avatar-xl mt-1">
                             <img src="<?php echo base_url() ?>assets/img/dummy/u5.png" class="d-block mx-auto" alt=""> 
                         </figure>    
@@ -38,6 +43,10 @@
                             <tr>
                                 <td>Jenis Kelamin</td>
                                 <td>LAKI-LAKI</td>
+                            </tr>
+                            <tr>
+                                <td>Tempat, Tgl Lahir</td>
+                                <td>MALANG, 4 JULI 1998</td>
                             </tr>
                             <tr>
                                 <td>Perguruan Tinggi</td>
@@ -101,11 +110,6 @@
                                     <label class="label-control col-md-4">Sisa Masa Bimbingan</label>
                                     <div class="col-md-8">
                                         <b>2 bulan</b>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <a href="<?php echo site_url('bimbingan/atur') ?>" class="btn btn-primary btn-block">Mulai Bimbingan Anda</a>
                                     </div>
                                 </div>
                             </div>

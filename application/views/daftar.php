@@ -67,12 +67,30 @@
                         <div class="shadow r-10">
                         <div class="row grid">
                             <div class="col-md-5 white p-5">
-                               <div class="mb-5">
-                                   <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="60" alt="">
-                               </div>
+                                <div class="mb-5">
+                                    <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="60" alt="">
+                                </div>
                                 <form class="form-material" action="<?php site_url('dashboard') ?>">
                                     <!-- Input -->
                                     <div class="body">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control"/>
+                                                <label class="form-label">NRP / NIM</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control"/>
+                                                <label class="form-label">Nama Mahasiswa</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control"/>
+                                                <label class="form-label">Perguruan Tinggi</label>
+                                            </div>
+                                        </div>
                                         <div class="form-group form-float">
                                             <div class="form-line">
                                                 <input type="text" class="form-control"/>
@@ -85,19 +103,19 @@
                                                 <label class="form-label">Password</label>
                                             </div>
                                         </div>
-                                        <a href="<?php echo site_url('dashboard') ?>" class="btn btn-primary btn-sm pl-4 pr-4">Masuk</a>
-                                        <div class="pt-5 pb-5"></div>
+                                        <a href="<?php echo site_url('daftar/proses') ?>" class="btn btn-primary btn-sm pl-4 pr-4">Daftar</a>
                                     </div>
                                     <!-- #END# Input -->
                                 </form>
                             </div>
                             <div class="col-md-7 blue p-5 text-white">
                                 <i class="icon-circle-o s-36"></i>
-                                <h1 class="mt-3">Siap Bimbingan</h1>
-                            <div class="pt-3 mb-5">
-                                <p>Lorem ipsum dolor sit amet,  sapiente tenetur ut, veritatis.</p>
-                            </div>
-                                <a href="<?php echo site_url('daftar') ?>" class="btn btn-info s-14 pl-4 pr-4">Buat Akun</a>
+                                <h1 class="mt-3">Daftar Ayolulus.in</h1>
+                                <div class="pt-3 mb-5">
+                                    <p>Silahkan isi identitas diri, asal perguruan tinggi, username dan password</p>
+                                    <p class="mt-3">Sudah punya akun? silahkan login</p>
+                                </div>
+                                <a href="<?php echo site_url('login') ?>" class="btn btn-info s-14 pl-4 pr-4">Masuk</a>
                             </div>
                         </div>
                         </div>

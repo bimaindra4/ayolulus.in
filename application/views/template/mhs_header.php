@@ -77,8 +77,8 @@
                         <img class="user_avatar" src="<?php echo base_url() ?>assets/img/dummy/u2.png" alt="User Image">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">User Mahasiswa</h6>
-                        <a href="#">2018/2019 Smt Genap</a>
+                        <h6 class="font-weight-light mt-2 mb-1">Bima Indra</h6>
+                        <a href="#">Mahasiswa</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>

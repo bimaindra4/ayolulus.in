@@ -13,4 +13,13 @@ class Manajemen extends CI_Controller {
 
 		$this->load->view("mhs/maj_data_diri", $data);
     }
+
+    function edit_data_diri() {
+        $data = [
+            "header" => $this->load->view("template/mhs_header", '', TRUE),
+            "footer" => $this->load->view("template/mhs_footer", '', TRUE)
+        ];
+
+        $this->load->view("mhs/maj_edit_data_diri", $data);
+    }
 }
