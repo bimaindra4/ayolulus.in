@@ -64,7 +64,7 @@
 <aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
     <section class="sidebar">
         <div class="w-80px mt-3 mb-3 ml-3">
-            <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="70" alt="">
+            <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="140" alt="">
         </div>
         <div class="relative">
             <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false"

@@ -68,7 +68,7 @@
                         <div class="row grid">
                             <div class="col-md-5 white p-5">
                                 <div class="mb-5">
-                                    <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="60" alt="">
+                                    <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="100" alt="">
                                 </div>
                                 <form class="form-material" action="<?php site_url('dashboard') ?>">
                                     <!-- Input -->

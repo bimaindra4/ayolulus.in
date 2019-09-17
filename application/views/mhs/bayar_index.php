@@ -45,6 +45,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>No Invoice</th>
                                     <th>Pembayaran</th>
                                     <th>Jatuh Tempo</th>
                                     <th>Nominal</th>
@@ -54,11 +55,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>1</td>
+                                    <td>sMqo2AscG92Sda0923</td>
+                                    <td>Paket Bimbingan 2 Bulan</td>
+                                    <td>23 September 2019</td>
+                                    <td>Rp. 200.000</td>
+                                    <td><span class="badge badge-success">Selesai</span></td>
                                     <td>
                                         <a onclick="detailPembayaran()" href="#" class="btn btn-primary btn-xs">Detail</a>
                                     </td>
@@ -76,7 +78,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Detail Pembayaran</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Detail Pembayaran - sMqo2AscG92Sda0923</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -85,24 +87,24 @@
                 <div class="modal-body">
                     <table class="table table-bordered table-hover">
                         <tr>
-                            <td style="width: 150px">Pembayaran</td>
-                            <td></td>
+                            <td style="width: 150px">No Invoice</td>
+                            <td>sMqo2AscG92Sda0923</td>
+                        </tr>
+                        <tr>
+                            <td>Pembayaran</td>
+                            <td>Paket Bimbingan 2 Bulan</td>
                         </tr>
                         <tr>
                             <td>Tanggal Bayar</td>
-                            <td></td>
+                            <td>22 September 2019</td>
                         </tr>
                         <tr>
                             <td>Via</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Bank</td>
-                            <td></td>
+                            <td>Transfer - Bank BCA</td>
                         </tr>
                         <tr>
                             <td>Nominal</td>
-                            <td></td>
+                            <td>Rp. 200.000</td>
                         </tr>
                         <tr>
                             <td>Bukti Pembayaran</td>
@@ -110,7 +112,7 @@
                         </tr>
                         <tr>
                             <td>Status</td>
-                            <td></td>
+                            <td><span class="badge badge-success">Telah diverifikasi</span></td>
                         </tr>
                     </table>
                 </div>

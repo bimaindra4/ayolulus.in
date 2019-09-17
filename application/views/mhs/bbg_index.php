@@ -23,7 +23,7 @@
                         </div>
                         <div class="mt-1">
                             <div>
-                                <strong>Alexander Koko</strong>
+                                <strong>Addin Aditya</strong>
                             </div>
                             <small>Tentor 1</small>
                         </div>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="mt-1">
                             <div>
-                                <strong>Nurhadi Aditya</strong>
+                                <strong>Sugeng Widodo</strong>
                             </div>
                             <small>Tentor 2</small>
                         </div>
@@ -65,10 +65,23 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>1</td>
+                                    <td>Perkenalan dan Pembahasan Materi</td>
+                                    <td>26 Agustus 2019</td>
+                                    <td>
+                                        <span class="badge badge-danger">Selesai</span>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary btn-xs">Detail</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Materi Dasar</td>
+                                    <td>2 September 2019</td>
+                                    <td>
+                                        <span class="badge badge-success">Segera</span>
+                                    </td>
                                     <td>
                                         <a href="#" class="btn btn-primary btn-xs">Detail</a>
                                     </td>

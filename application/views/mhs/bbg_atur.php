@@ -42,6 +42,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row clearfix mb-3">
+                                        <div class="col-sm-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+                                                <label class="form-check-label" for="invalidCheck">
+                                                    Tidak ada ide tentang judul tugas akhir
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row clearfix">
                                         <div class="col-sm-12">
                                             <div class="form-group form-float form-group-sm">
@@ -91,7 +101,6 @@
                                                         <td>4.7</td>
                                                         <td>
                                                             <button class="btn btn-primary btn-xs" onclick="dataTentor()">Lihat</button>
-                                                            <button class="btn btn-success btn-xs" onclick="pilihTentor()">Pilih</button>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -101,7 +110,6 @@
                                                         <td>4.7</td>
                                                         <td>
                                                             <button class="btn btn-primary btn-xs" onclick="dataTentor()">Lihat</button>
-                                                            <button class="btn btn-success btn-xs" onclick="pilihTentor()">Pilih</button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -132,9 +140,6 @@
                                                         <td>Sugeng Widodo</td>
                                                         <td>Rabu, 13.00 - 15.00</td>
                                                         <td>Tentor 2</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="4" class="text-center">Tidak ada tentor yang dipilih</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -317,27 +322,27 @@
                     <table class="table table-bordered table-hover">
                         <tr>
                             <td style="width: 125px">Judul Bimbingan</td>
-                            <td></td>
+                            <td>Implementasi Metode Rapid Application Development (RAD) pada Sistem Informasi LPPM (Studi Kasus: STIKI Malang)</td>
                         </tr>
                         <tr>
                             <td>Kata Kunci</td>
-                            <td></td>
+                            <td>Rapid Application Development, Sistem Informasi</td>
                         </tr>
                         <tr>
                             <td>Tentor 1</td>
-                            <td></td>
+                            <td>Addin Aditya (Senin, 08.00 - 10.00)</td>
                         </tr>
                         <tr>
                             <td>Tentor 2</td>
-                            <td></td>
+                            <td>Sugeng Widodo (Rabu, 13.00 - 15.00)</td>
                         </tr>
                         <tr>
                             <td>Mulai Bimbingan</td>
-                            <td></td>
+                            <td>19 Agustus 2019</td>
                         </tr>
                         <tr>
                             <td>Masa Bimbingan</td>
-                            <td></td>
+                            <td>2 Bulan</td>
                         </tr>
                     </table>
                 </div>

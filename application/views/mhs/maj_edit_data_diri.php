@@ -63,12 +63,22 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group m-0">
                                         <label for="pt" class="col-form-label s-12">PERGURUAN TINGGI</label>
                                         <select name="pt" class="custom-select select2" required>
                                             <option value="">-- Pilih PT --</option>
                                             <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group m-0">
+                                        <label for="jenjang" class="col-form-label s-12">JENJANG</label>
+                                        <select for="jenjang" class="form-control r-0 light s-12" name="jenjang">
+                                            <option value="">-- Pilih Jenjang --</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1">S1</option>
                                         </select>
                                     </div>
                                 </div>

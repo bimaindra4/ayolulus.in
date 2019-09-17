@@ -85,31 +85,25 @@
                                 <div class="form-group row">
                                     <label class="label-control col-md-4">Judul Tugas Akhir</label>
                                     <div class="col-md-8">
-                                        <b>Pengaruh Aktivitas A Terhadap Aktivitas B Menggunakan Metode ABC</b>
+                                        <b>Implementasi Metode Rapid Application Development (RAD) pada Sistem Informasi LPPM (Studi Kasus: STIKI Malang)</b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="label-control col-md-4">Tentor 1</label>
                                     <div class="col-md-8">
-                                        <b>I Gede Wayan Sukadana, S.Kom., M.MT</b>
+                                        <b>Addin Aditya</b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="label-control col-md-4">Tentor 2</label>
                                     <div class="col-md-8">
-                                        <b>Wahyudi Handayani, S.ST., M.MT</b>
+                                        <b>Sugeng Widodo</b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="label-control col-md-4">Jumlah Bimbingan</label>
+                                    <label class="label-control col-md-4">Masa Bimbingan</label>
                                     <div class="col-md-8">
-                                        <b>8 kali</b>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="label-control col-md-4">Sisa Masa Bimbingan</label>
-                                    <div class="col-md-8">
-                                        <b>2 bulan</b>
+                                        <b>2 Bulan</b>
                                     </div>
                                 </div>
                             </div>

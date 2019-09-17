@@ -68,7 +68,7 @@
                         <div class="row grid">
                             <div class="col-md-5 white p-5">
                                <div class="mb-5">
-                                   <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="60" alt="">
+                                   <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="100" alt="">
                                </div>
                                 <form class="form-material" action="<?php site_url('dashboard') ?>">
                                     <!-- Input -->
@@ -93,9 +93,9 @@
                             </div>
                             <div class="col-md-7 blue p-5 text-white">
                                 <i class="icon-circle-o s-36"></i>
-                                <h1 class="mt-3">Siap Bimbingan</h1>
+                                <h1 class="mt-3">Siap Bimbingan?</h1>
                             <div class="pt-3 mb-5">
-                                <p>Lorem ipsum dolor sit amet,  sapiente tenetur ut, veritatis.</p>
+                                <p>Mulai bimbingan tugas akhir Anda sekarang, jangan biarkan wisudamu terlambat</p>
                             </div>
                                 <a href="<?php echo site_url('daftar') ?>" class="btn btn-info s-14 pl-4 pr-4">Buat Akun</a>
                             </div>
