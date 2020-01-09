@@ -72,7 +72,6 @@
     </div>
 </div>
 
-
 <div class="modal fade" id="tambahTentor" tabindex="-1" role="dialog" aria-labelledby="tambahTentor" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -84,7 +83,6 @@
             </div>
             <form action="<?php echo site_url('tentor/tambah_tentor') ?>" method="post" id="formEditJabatan">
                 <div class="modal-body">
-                    <input type="hidden" name="id_pegawai" id="id_pegawai">
                     <div class="form-row">
                         <div class="col-md-12">
                             <div class="form-group row">

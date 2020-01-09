@@ -134,4 +134,62 @@ class Tentor extends CI_Controller {
         $output = ["table" => $result];
         echo json_encode($output);
     }
+
+    function data_diri($uidt) {
+        $data["header"] = $this->header;
+        $data["footer"] = $this->footer;
+
+        if($this->sess['session_role'] == 2) {
+            $data["jpublikasi"] = $this->db->select("id_jenis_publikasi AS _id, jenis_publikasi AS jenis")->get("tbl_publikasi_jenis")->result();
+            $data["jgelar"] = $this->db->select("id_gelar AS _id, gelar_jenis AS jenis")->get("tbl_gelar_jenis")->result();
+            $data["jafung"] = $this->db->select("id_jafung AS _id, jafung_nama AS jafung")->get("tbl_jafung_jenis")->result();
+            $data["bidang"] = $this->db->select("id_bidang AS _id, bidang_nama AS bidang")->get("tbl_bidang_jenis")->result();
+            $data["pt"] = $this->db->select("id_pt, pt_nama")->from("tbl_master_pt")->get()->result();
+            $data["tentor"] = $this->TentorModel->GetDataTentor($uidt);
+            $data["data_publikasi"] = $this->TentorModel->DataPublikasiTentor($uidt);
+            $data["data_gelar"] = $this->TentorModel->DataGelarTentor($uidt);
+
+            $this->load->view("tentor/tentor_datadiri", $data);
+        }
+    }
+
+    function tambah_publikasi() {
+        if($this->sess['session_role'] == 2) {
+            $data = [
+                "id_tentor_publikasi" => "",
+                "id_tentor_publikasi_url" => $this->AppModel->RandomString(20),
+                "id_tentor" => $this->AppModel->GetUIDFromID($this->sess['session_userid'], "id_tentor", "tbl_master_tentor"),
+                "id_jenis_publikasi" => $this->input->post("publikasi"),
+                "publikasi_judul" => $this->input->post("judul"),
+                "publikasi_jurnal" => $this->input->post("jurnal"),
+                "publikasi_volume" => $this->input->post("volume"),
+                "publikasi_no" => $this->input->post("no"),
+                "publikasi_halaman" => $this->input->post("halaman"),
+                "created_at" => $this->AppModel->DateTimeNow(),
+                "status" => 0
+            ];
+
+            $proc = $this->TentorModel->TambahPublikasi($data);
+            redirect("tentor/data_diri/".$this->sess['session_userid']);
+        }
+    }
+
+    function tambah_gelar() {
+        if($this->sess['session_role'] == 2) {
+            $data = [
+                "id_tentor_gelar" => "",
+                "id_tentor_gelar_url" => $this->AppModel->RandomString(20),
+                "id_tentor" => $this->AppModel->GetUIDFromID($this->sess['session_userid'], "id_tentor", "tbl_master_tentor"),
+                "id_gelar" => $this->input->post("jenis"),
+                "no_ijazah" => $this->input->post("no_ijazah"),
+                "institusi" => $this->input->post("nama_pt"),
+                "deskripsi_gelar" => $this->input->post("deskripsi"),
+                "created_at" => $this->AppModel->DateTimeNow(),
+                "status" => 0
+            ];
+
+            $proc = $this->TentorModel->TambahGelar($data);
+            redirect("tentor/data_diri/".$this->sess['session_userid']);
+        }
+    }
 }

@@ -37,7 +37,7 @@ class Dashboard extends CI_Controller {
         if($this->sess['session_role'] == 1) {
             $this->load->view("sadmin/index", $data);
         } else if($this->sess['session_role'] == 2) {
-
+            $this->load->view("tentor/index", $data);
         } else if($this->sess['session_role'] == 3) {
             $this->load->view("mhs/index", $data);
         }

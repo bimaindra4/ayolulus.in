@@ -6,9 +6,13 @@ class TentorModel extends CI_Model {
     }
 
     public function GetDataTentor($uid="") {
-        $this->db->select("tmt.*, tmp.pt_nama AS pt, tjj.jafung_nama AS jafung");
+        $this->db->select("tmt.*, tmp.pt_nama AS pt, tjj.jafung_nama AS jafung, 
+                           GROUP_CONCAT(tbj.id_bidang) AS _idbidang,
+                           GROUP_CONCAT(tbj.bidang_nama) AS bidang");
         $this->db->join("tbl_jafung_jenis tjj", "tmt.id_jafung = tjj.id_jafung");
         $this->db->join("tbl_master_pt tmp", "tmt.id_pt = tmp.id_pt");
+        $this->db->join("tbl_tentor_bidang ttb", "tmt.id_tentor = ttb.id_tentor");
+        $this->db->join("tbl_bidang_jenis tbj", "ttb.id_bidang = tbj.id_bidang");
         ($uid == "" ? "" : $this->db->where("tmt.id_tentor_url", $uid));
         $sql = $this->db->get("tbl_master_tentor tmt");
 
@@ -44,15 +48,23 @@ class TentorModel extends CI_Model {
     }
 
     public function DataPublikasiTentor($uidt) {
-
+        $this->db->select("ttp.publikasi_judul, tpj.jenis_publikasi, ttp.status");
+        $this->db->join("tbl_publikasi_jenis tpj", "ttp.id_jenis_publikasi = tpj.id_jenis_publikasi");
+        $this->db->join("tbl_master_tentor tmt", "ttp.id_tentor = tmt.id_tentor");
+        $this->db->where("tmt.id_tentor_url", $uidt);
+        $sql = $this->db->get("tbl_tentor_publikasi ttp");
+        
+        return ($sql->num_rows() == 0 ? [] : $sql->result());
     }
 
     public function DataGelarTentor($uidt) {
-
-    }
-
-    public function DataJafungTentor($uidt) {
-
+        $this->db->select("tgj.gelar_jenis, ttg.no_ijazah, ttg.status");
+        $this->db->join("tbl_gelar_jenis tgj", "ttg.id_gelar = tgj.id_gelar");
+        $this->db->join("tbl_master_tentor tmt", "ttg.id_tentor = tmt.id_tentor");
+        $this->db->where("tmt.id_tentor_url", $uidt);
+        $sql = $this->db->get("tbl_tentor_gelar ttg");
+        
+        return ($sql->num_rows() == 0 ? [] : $sql->result());
     }
 
     public function DataRiwayatBimbinganTentor($uidt) {
@@ -65,6 +77,16 @@ class TentorModel extends CI_Model {
 
     public function TambahTentor($data) {
         $sql = $this->db->insert("tbl_master_tentor", $data);
+        return $sql;
+    }
+
+    public function TambahPublikasi($data) {
+        $sql = $this->db->insert("tbl_tentor_publikasi", $data);
+        return $sql;
+    }
+
+    public function TambahGelar($data) {
+        $sql = $this->db->insert("tbl_tentor_gelar", $data);
         return $sql;
     }
 
