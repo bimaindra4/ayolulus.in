@@ -9,24 +9,24 @@
     <title>Ayolulus.in</title>
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/app.css">
-        <style>)
-        .loader {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #F5F8FA;
-            z-index: 9998;
-            text-align: center;
-        }
+        <style>
+            .loader {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #F5F8FA;
+                z-index: 9998;
+                text-align: center;
+            }
 
-        .plane-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-        }
-    </style>
+            .plane-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+        </style>
     <!-- Js -->
     <script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
 </head>
@@ -70,25 +70,23 @@
                                <div class="mb-5">
                                    <img src="<?php echo base_url() ?>assets/img/basic/logo.jpg" width="100" alt="">
                                </div>
-                                <form class="form-material" action="<?php site_url('dashboard') ?>">
-                                    <!-- Input -->
+                                <form class="form-material" action="<?php echo site_url('login/auth') ?>" method="post">
                                     <div class="body">
                                         <div class="form-group form-float">
                                             <div class="form-line">
-                                                <input type="text" class="form-control"/>
+                                                <input type="text" class="form-control" name="username"/>
                                                 <label class="form-label">Username</label>
                                             </div>
                                         </div>
                                         <div class="form-group form-float">
                                             <div class="form-line">
-                                                <input type="text" class="form-control"/>
+                                                <input type="password" class="form-control" name="password"/>
                                                 <label class="form-label">Password</label>
                                             </div>
                                         </div>
-                                        <a href="<?php echo site_url('dashboard') ?>" class="btn btn-primary btn-sm pl-4 pr-4">Masuk</a>
+                                        <button type="submit" class="btn btn-primary btn-sm pl-4 pr-4">Masuk</button>
                                         <div class="pt-5 pb-5"></div>
                                     </div>
-                                    <!-- #END# Input -->
                                 </form>
                             </div>
                             <div class="col-md-7 blue p-5 text-white">

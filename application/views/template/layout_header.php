@@ -76,8 +76,7 @@
                         <img class="user_avatar" src="<?php echo base_url() ?>assets/img/dummy/u2.png" alt="User Image">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">User Mahasiswa</h6>
-                        <a href="#">2018/2019 Smt Genap</a>
+                        <h6 class="font-weight-light mt-2 mb-1"><?php echo $usernama ?></h6>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -103,7 +102,15 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <?php echo $this->load->view("template/menu_dosen", '', TRUE); ?>
+            <?php 
+                if($userrole == 1) {
+                    echo $this->load->view("template/menu_admin", '', TRUE);
+                } else if($userrole == 2) {
+                    echo $this->load->view("template/menu_dosen", '', TRUE);
+                } else if($userrole == 3) {
+                    echo $this->load->view("template/menu_mhs", '', TRUE);
+                }  
+            ?>
         </ul>
     </section>
 </aside>

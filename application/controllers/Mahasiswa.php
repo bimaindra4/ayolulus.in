@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Mahasiswa extends CI_Controller {
     protected $header;
     protected $footer;
 
@@ -11,7 +11,9 @@ class Dashboard extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model("AppModel");
         $this->load->model("SessionModel");
+        $this->load->model("MahasiswaModel");
 
         $this->sess = $this->SessionModel->GetSession();
 		$this->sess_not_con = !$this->sess['session_userid'] && !$this->sess['session_role'];
@@ -35,11 +37,9 @@ class Dashboard extends CI_Controller {
         $data["footer"] = $this->footer;
 
         if($this->sess['session_role'] == 1) {
-            $this->load->view("sadmin/index", $data);
-        } else if($this->sess['session_role'] == 2) {
-
-        } else if($this->sess['session_role'] == 3) {
-            $this->load->view("mhs/index", $data);
+            $data["mhs"] = $this->MahasiswaModel->GetDataMahasiswa();
+            $data["pt"] = $this->db->select("id_pt, pt_nama")->from("tbl_master_pt")->get()->result();
+            $this->load->view("sadmin/mahasiswa", $data);
         }
     }
 }

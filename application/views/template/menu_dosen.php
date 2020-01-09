@@ -8,12 +8,12 @@
 <li>
     <a href="#">
     <i class="icon icon-note blue-text s-18 pl-3"></i> 
-        <span>Riwayat Bimbingan</span>
+        <span>Proses Bimbingan</span>
     </a>
 </li>
 <li>
     <a href="#">
     <i class="icon icon-dollar blue-text s-18 pl-3"></i> 
-        <span>Riwayat Pembayaran</span>
+        <span>Riwayat Bimbingan</span>
     </a>
 </li>
