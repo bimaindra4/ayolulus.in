@@ -290,7 +290,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="#" method="post" id="formEditJabatan">
+            <form action="<?php echo site_url('tentor/edit_tentor/'.$userid) ?>" method="post" id="formEditJabatan">
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="col-md-12">
@@ -363,6 +363,17 @@
                     <div class="form-row">
                         <div class="col-md-12">
                             <div class="form-group mb-1">
+                                <label for="pendidikan" class="col-form-label s-12">PENDIDIKAN TERAKHIR</label>
+                                <select class="form-control s-12" name="pendidikan">
+                                    <option value="S2">S2</option>
+                                    <option value="S3">S3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-group mb-1">
                                 <label for="bidkeahlian" class="col-form-label s-12">BIDANG KEAHLIAN</label>
                                 <select class="form-control select2" name="bidang_keahlian[]" id="bidang_keahlian" multiple="multiple">
                                     <?php foreach($bidang as $rowb) { ?> 
@@ -372,6 +383,20 @@
                                 <a class="btn btn-xs btn-primary mt-2" data-toggle="modal" data-target="#TambahBidang">
                                     <i class="icon-plus mr-2"></i> Tambah Bidang
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-1">
+                                <label for="username" class="col-form-label s-12">USERNAME</label>
+                                <input type="text" name="username" class="form-control s-12" value="<?php echo $tentor->tentor_username ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-1">
+                                <label for="password" class="col-form-label s-12">PASSWORD</label>
+                                <input type="password" name="password" class="form-control s-12" placeholder="Password">
                             </div>
                         </div>
                     </div>

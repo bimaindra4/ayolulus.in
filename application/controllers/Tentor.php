@@ -192,4 +192,73 @@ class Tentor extends CI_Controller {
             redirect("tentor/data_diri/".$this->sess['session_userid']);
         }
     }
+
+    function edit_tentor($uidt) {
+        if($this->sess['session_role'] == 2) {
+            $password = $this->input->post("password");
+            $bidkeahlian = $this->input->post("bidang_keahlian");
+
+            $data = [
+                "id_pt" => $this->input->post("pt"),
+                "id_jafung" => $this->input->post("jafung"),
+                "tentor_nama" => $this->input->post("nama_tentor"),
+                "tentor_identitas" => $this->input->post("identitas"),
+                "tentor_tempat_lahir" => $this->input->post("tempat_lahir"),
+                "tentor_tanggal_lahir" => date("Y-m-d", strtotime($this->input->post("tanggal_lahir"))),
+                "tentor_gelar_depan" => ($this->input->post("gd") == "" ? NULL : $this->input->post("gd")),
+                "tentor_gelar_belakang" => $this->input->post("gb"),
+                "tentor_pendidikan" => $this->input->post("pendidikan"),
+                "tentor_username" => $this->input->post("username"),
+                "modified_at" => $this->AppModel->DateTimeNow(),
+            ];
+            if($password != "" || $password != NULL) {
+                $data["tentor_password"] = sha1($password);
+            }
+
+            $proc = $this->TentorModel->EditTentor($data,$uidt);
+            $this->edit_bidang_keahlian($bidkeahlian,$uidt);
+
+            redirect("tentor/data_diri/".$uidt);
+        }
+    }
+
+    function edit_bidang_keahlian($bk,$uidt) {
+        $idt = $this->AppModel->GetUIDFromID($uidt, "id_tentor", "tbl_master_tentor");
+        $oldBK = $this->db->select("id_tentor, id_bidang")->where("id_tentor", $idt)->get("tbl_tentor_bidang");
+        $numOldBK = $oldBK->num_rows();
+
+        // Delete from existing BK to new BK
+        foreach($oldBK->result() as $row) {
+            $isDelete = true;
+            for($i=0; $i<count($bk); $i++) {
+                if($row->id_bidang == $bk[$i]) {
+                    $isDelete = false;
+                    break;
+                }
+            }
+
+            if($isDelete == true) {
+                $this->db->where("id_tentor", $idt)->where("id_bidang", $row->id_bidang)->delete("tbl_tentor_bidang");
+            }
+        }
+
+        // Adding from new BK to existing BK
+        for($i=0; $i<count($bk); $i++) {
+            $checkBK = $this->db->where("id_tentor", $idt)->where("id_bidang", $bk[$i])->get("tbl_tentor_bidang")->num_rows();
+            if($checkBK == 0) {
+                $result = TRUE;
+            } else {
+                $result = FALSE;
+            }
+
+            if($result) {
+                $data = [
+                    "id_tentor" => $idt,
+                    "id_bidang" => $bk[$i]
+                ];
+
+                $this->db->insert("tbl_tentor_bidang", $data);
+            }
+        }
+    }
 }
