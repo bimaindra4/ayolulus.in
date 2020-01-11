@@ -22,7 +22,7 @@ class TopsisOperation extends CI_Model {
     }
 
     function _define_bobot() {
-        $bobot = [0.3, 0.25, 0.1, 0.2, 0.3];
+        $bobot = [0.15, 0.25, 0.1, 0.2, 0.3];
         return $bobot;
     }
 
@@ -30,7 +30,7 @@ class TopsisOperation extends CI_Model {
         for($i=0; $i<count($data[0]); $i++) {
             $x = 0;
             for($j=0; $j<count($data); $j++) {
-                $x += $data[$j][$i] ^ 2; 
+                $x += pow($data[$j][$i],2); 
             }
 
             $result[] = sqrt($x);
@@ -89,7 +89,7 @@ class TopsisOperation extends CI_Model {
         for($i=0; $i<count($data); $i++) {
             $dsp = 0;
             for($j=0; $j<count($data[0]); $j++) {
-                $dsp += ($isp[$j] - $data[$i][$j]) ^ 2;
+                $dsp += pow(($isp[$j] - $data[$i][$j]),2);
             }
 
             $res[] = sqrt($dsp);
@@ -102,7 +102,7 @@ class TopsisOperation extends CI_Model {
         for($i=0; $i<count($data); $i++) {
             $dsn = 0;
             for($j=0; $j<count($data[0]); $j++) {
-                $dsn += ($data[$i][$j] - $isn[$j]) ^ 2;
+                $dsn += pow(($data[$i][$j] - $isn[$j]),2);
             }
 
             $res[] = sqrt($dsn);
