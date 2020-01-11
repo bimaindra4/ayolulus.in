@@ -100,6 +100,7 @@ class Tentor extends CI_Controller {
         $data["footer"] = $this->footer;
 
         if($this->sess['session_role'] == 1) {
+            $data["statistik"] = $this->TentorModel->StatistikTentor();
             $this->load->view("sadmin/tentor_statistik", $data);
         }
     }

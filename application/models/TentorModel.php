@@ -71,6 +71,25 @@ class TentorModel extends CI_Model {
 
     }
 
+    public function StatistikTentor() {
+        $this->db->select("tmt.tentor_identitas,
+                           tmt.tentor_nama,
+                           IFNULL(SUM(tpj.poin_publikasi),0) AS publikasi,
+                           IFNULL(SUM(tgj.gelar_poin),0) AS gelar,
+                           IFNULL(tjj.jafung_poin,0) AS jafung,
+                           IFNULL(AVG(ttr.rating),0) AS riwayat");
+        $this->db->join("tbl_tentor_publikasi ttp", "tmt.id_tentor = ttp.id_tentor", "LEFT");
+        $this->db->join("tbl_publikasi_jenis tpj", "ttp.id_jenis_publikasi = tpj.id_jenis_publikasi");
+        $this->db->join("tbl_tentor_gelar ttg", "tmt.id_tentor = ttg.id_tentor", "LEFT");
+        $this->db->join("tbl_gelar_jenis tgj", "ttg.id_gelar = tgj.id_gelar", "LEFT");
+        $this->db->join("tbl_jafung_jenis tjj", "tmt.id_jafung = tjj.id_jafung", "LEFT");
+        $this->db->join("tbl_ta_rating ttr", "tmt.id_tentor = ttr.id_tentor", "LEFT");
+        $this->db->group_by("tmt.id_tentor");
+        $sql = $this->db->get("tbl_master_tentor tmt");
+        
+        return ($sql->num_rows() == 0 ? [] : $sql->result());
+    }
+
     public function DetailDataTentor($uidt) {
 
     }

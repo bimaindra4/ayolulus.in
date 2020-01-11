@@ -32,15 +32,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                <?php $no=1; foreach($statistik as $row) { ?>
+                                    <tr>
+                                        <td><?php echo $no ?></td>
+                                        <td><?php echo $row->tentor_identitas ?></td>
+                                        <td><?php echo $row->tentor_nama ?></td>
+                                        <td><?php echo $row->publikasi ?></td>
+                                        <td><?php echo $row->gelar ?></td>
+                                        <td><?php echo $row->jafung ?></td>
+                                        <td><?php echo $row->riwayat ?></td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
